@@ -1,0 +1,14 @@
+{
+  "tests": [
+    {
+      "name": "test",
+      "setup": "dotnet clean build",
+      "run": "dotnet test",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 6
+    }
+  ]
+}
