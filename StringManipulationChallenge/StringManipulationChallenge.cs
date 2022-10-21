@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace StringManipulationChallenge
 {
@@ -13,11 +13,44 @@ namespace StringManipulationChallenge
             string lName;           //this will hold the users last name
             string userFullName;    //this will hold the users full name;
             
-            //
-            //
-            //implement the required code here and within the methods below.
-            //
-            //
+
+            Console.WriteLine("Please enter your message and press enter");
+            userInputString = Console.ReadLine();//***We are not worrying about validation right now.***
+
+
+            Console.WriteLine("Please enter a number LESS THAN the length of your string and press enter");
+            elementNum = int.Parse(Console.ReadLine());//***We are not worrying about validation right now.***
+            
+
+            //now call each method.
+            string s1 = StringToUpper(userInputString);
+            System.Console.WriteLine($"Your message in upper case is '{s1}'");
+
+
+            string s2 = StringToLower(userInputString);
+            System.Console.WriteLine($"Your message in lower case is '{s2}'");
+
+
+            string s3 = StringTrim(userInputString);
+            System.Console.WriteLine($"Your message trimmed of beginning and ending whitespace is '{s3}'");
+            
+
+            string s4 = StringSubstring(userInputString, elementNum);
+            System.Console.WriteLine($"The substring of your message starting with the {elementNum} element is '{s4}'");
+            
+
+            Console.WriteLine($"For which character should I search in your original message, '{userInputString}'?");
+            char1 = Console.ReadLine()[0];
+            int charElement = SearchChar(userInputString, char1);
+            Console.WriteLine($"Index of {char1} is {charElement}");
+
+
+            Console.WriteLine("Please enter your first name.");
+            fName = Console.ReadLine();
+            Console.WriteLine("Please enter your last name.");
+            lName = Console.ReadLine();
+            userFullName = ConcatNames(fName,lName);
+            Console.WriteLine($"Your first and Last names together are '{userFullName}'");
 
 
         }
@@ -28,7 +61,9 @@ namespace StringManipulationChallenge
         // 2) print the result to the console and 
         // 3) return the new string.
         public static string StringToUpper(string x){
-            throw new NotImplementedException("StringToUpper method not implemented.");
+            string y = x.ToUpper();
+            Console.WriteLine($"From the StringToUpper method '{y}'");
+            return y; 
         }
 
         // This method has one string parameter. 
@@ -37,8 +72,9 @@ namespace StringManipulationChallenge
         // 2) print the result to the console and 
         // 3) return the new string.        
         public static string StringToLower(string x){
-            throw new NotImplementedException("StringToUpper method not implemented.");
-
+            string y = x.ToLower();
+            Console.WriteLine($"From the StringToLower method '{y}'");
+            return y; 
         }
         
         // This method has one string parameter. 
@@ -47,8 +83,9 @@ namespace StringManipulationChallenge
         // 2) print the result to the console and 
         // 3) return the new string.
         public static string StringTrim(string x){
-            throw new NotImplementedException("StringTrim method not implemented.");
-
+            string y = x.Trim();
+            Console.WriteLine($"From the StringTrim method '{y}'");
+            return y; 
         }
         
         // This method has two parameters, one string and one integer. 
@@ -57,8 +94,9 @@ namespace StringManipulationChallenge
         // 2) print the result to the console and 
         // 3) return the new string.
         public static string StringSubstring(string x, int elementNum){
-            throw new NotImplementedException("StringSubstring method not implemented.");
-
+            string y = x.Substring(elementNum);
+            Console.WriteLine($"From the StringSubstring method '{y}'");
+            return y; 
         }
 
         // This method has two parameters, one string and one char.
@@ -66,7 +104,9 @@ namespace StringManipulationChallenge
         // 1) search the string parameter for the char parameter
         // 2) return the index of the char.
         public static int SearchChar(string userInputString, char x){
-            throw new NotImplementedException("SearchChar method not implemented.");
+            int searchInput = userInputString.IndexOf(x);
+            Console.WriteLine($"From the SearchChar method '{searchInput}'");
+            return searchInput;
         }
 
         // This method has two string parameters.
@@ -74,7 +114,9 @@ namespace StringManipulationChallenge
         // 1) concatenate the two strings with a space between them.
         // 2) return the new string.
         public static string ConcatNames(string fName, string lName){
-            throw new NotImplementedException("ConcatNames method not implemented.");
+            string userFullName = string.Concat(fName, " ", lName);//you can enter more than just 2 strings to concatenate.
+            Console.WriteLine($"From the ConcatNames method '{userFullName}'");
+            return userFullName;
         }
 
 
