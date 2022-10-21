@@ -2,8 +2,8 @@
   "tests": [
     {
       "name": "test",
-      "setup": "dotnet clean build",
-      "run": "dotnet test",
+      "setup": "",
+      "run": "DOTNET_CLI_HOME=/tmp/ dotnet test",
       "input": "",
       "output": "",
       "comparison": "included",
