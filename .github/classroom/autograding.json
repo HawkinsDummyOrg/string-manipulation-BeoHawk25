@@ -3,7 +3,7 @@
     {
       "name": "test",
       "setup": "",
-      "run": "dotnet test",
+      "run": "DOTNET_CLI_HOME=/tmp/ dotnet test",
       "input": "",
       "output": "",
       "comparison": "included",
